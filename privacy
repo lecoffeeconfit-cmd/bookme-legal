@@ -1,1 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Privacy Policy for BookMe: Guided Book Writer." />
+  <meta name="theme-color" content="#17120d" />
+  <title>BookMe — Privacy Policy</title>
 
+  <style>
+    :root {
+      --ink: #2a2118;
+      --ink-soft: #5e4b36;
+      --parchment: #f3e4be;
+      --parchment-2: #e7cf98;
+      --gold: #d7a84c;
+      --gold-soft: #f0cf7d;
+      --moon: #d9c7ff;
+      --amethyst: #7257a8;
+      --amethyst-soft: #a989d8;
+      --emerald: #2f5f50;
+      --teal-magic: #3e7b74;
+      --night: #0d0b12;
+      --night-2: #17111f;
+      --wine: #6e304d;
+      --forest: #2d5647;
+      --line: rgba(74, 52, 28, 0.22);
+      --shadow: 0 24px 65px rgba(0, 0, 0, 0.42);
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      background: var(--night);
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.72;
+      background:
+        radial-gradient(circle at 18% 10%, rgba(215,168,76,.18), transparent 28%),
+        radial-gradient(circle at 82% 18%, rgba(114,87,168,.22), transparent 30%),
+        radial-gradient(circle at 50% 72%, rgba(62,123,116,.13), transparent 34%),
+        linear-gradient(160deg, var(--night), var(--night-2) 52%, #09080d);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .stars,
+    .stars::before,
+    .stars::after {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      content: "";
+      z-index: 0;
+      background-image:
+        radial-gradient(circle, rgba(240,207,125,.85) 0 1px, transparent 1.6px),
+        radial-gradient(circle, rgba(217,199,255,.62) 0 1px, transparent 1.5px),
+        radial-gradient(circle, rgba(169,137,216,.45) 0 1px, transparent 1.4px);
+      background-size: 92px 92px, 143px 143px, 211px 211px;
+      background-position: 0 0, 37px 71px, 83px 24px;
+      opacity: .24;
+      animation: drift 24s linear infinite;
+    }
+
+    .stars::before {
+      transform: scale(1.2);
+      opacity: .12;
+      animation-duration: 34s;
+    }
+
+    .stars::after {
+      transform: scale(.8);
+      opacity: .1;
+      animation-duration: 42s;
+    }
+
+    @keyframes drift {
+      from { transform: translateY(0); }
+      to   { transform: translateY(-92px); }
+    }
+
+    .shell {
+      position: relative;
+      z-index: 1;
+      width: min(100% - 28px, 980px);
+      margin: 0 auto;
+      padding: 54px 0 70px;
+    }
+
+    .crest-wrap {
+      position: relative;
+      width: 132px;
+      height: 116px;
+      margin: 0 auto 6px;
+      display: grid;
+      place-items: center;
+    }
+
+    .crest {
+      width: 74px;
+      height: 74px;
+      margin: 0;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(229,199,125,.55);
+      border-radius: 50%;
+      color: var(--gold-soft);
+      font-size: 36px;
+      background:
+        radial-gradient(circle at 35% 30%, rgba(114,87,168,.34), transparent 42%),
+        rgba(13,11,18,.78);
+      box-shadow:
+        0 0 0 8px rgba(215,168,76,.05),
+        0 0 34px rgba(215,168,76,.20),
+        0 0 62px rgba(114,87,168,.18);
+      animation: glow 4s ease-in-out infinite;
+      position: relative;
+      z-index: 2;
+    }
+
+    .sparkle {
+      position: absolute;
+      z-index: 1;
+      font-size: 14px;
+      line-height: 1;
+      opacity: .82;
+      filter: drop-shadow(0 0 7px currentColor);
+      animation: twinkle 2.6s ease-in-out infinite;
+      user-select: none;
+      pointer-events: none;
+    }
+
+    .sparkle.s1 { left: 10px; top: 25px; color: #d9c7ff; animation-delay: .1s; }
+    .sparkle.s2 { right: 9px; top: 18px; color: #f0cf7d; animation-delay: .7s; }
+    .sparkle.s3 { left: 24px; bottom: 16px; color: #67b6a3; animation-delay: 1.15s; }
+    .sparkle.s4 { right: 24px; bottom: 11px; color: #b690e8; animation-delay: 1.65s; }
+    .sparkle.s5 { left: 3px; top: 57px; color: #e9a0c3; animation-delay: 2s; font-size: 10px; }
+    .sparkle.s6 { right: 3px; top: 55px; color: #8fd4c4; animation-delay: 2.3s; font-size: 10px; }
+
+    @keyframes twinkle {
+      0%, 100% {
+        transform: scale(.75) rotate(0deg);
+        opacity: .35;
+      }
+      50% {
+        transform: scale(1.18) rotate(18deg);
+        opacity: 1;
+      }
+    }
+
+    @keyframes glow {
+      0%, 100% {
+        box-shadow: 0 0 0 8px rgba(215,168,76,.05), 0 0 30px rgba(215,168,76,.15), 0 0 50px rgba(114,87,168,.10);
+      }
+      50% {
+        box-shadow: 0 0 0 11px rgba(215,168,76,.07), 0 0 48px rgba(215,168,76,.26), 0 0 72px rgba(114,87,168,.22);
+      }
+    }
+
+    .hero {
+      text-align: center;
+      color: #f8efd8;
+      margin-bottom: 28px;
+    }
+
+    .eyebrow {
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--gold-soft);
+      font-size: .78rem;
+      margin-bottom: 7px;
+    }
+
+    h1 {
+      font-size: clamp(2.35rem, 6vw, 4.6rem);
+      line-height: 1;
+      margin: 0;
+      font-weight: 700;
+      letter-spacing: -.035em;
+      text-shadow:
+        0 2px 18px rgba(0,0,0,.45),
+        0 0 28px rgba(114,87,168,.18);
+    }
+
+    .subtitle {
+      max-width: 690px;
+      margin: 16px auto 0;
+      color: rgba(246,236,210,.74);
+      font-size: 1.03rem;
+    }
+
+    .quick-nav {
+      display: flex;
+      gap: 9px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 23px auto 32px;
+    }
+
+    .quick-nav a {
+      position: relative;
+      overflow: hidden;
+      color: #fff3cf;
+      text-decoration: none;
+      padding: 9px 14px;
+      border: 1px solid rgba(236,207,139,.42);
+      border-radius: 999px;
+      background:
+        linear-gradient(110deg,
+          rgba(103,74,142,.34),
+          rgba(44,98,83,.28) 48%,
+          rgba(167,112,61,.28));
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.12),
+        inset 0 0 18px rgba(114,87,168,.06),
+        0 0 12px rgba(114,87,168,.07);
+      transition:
+        transform .18s ease,
+        background .22s ease,
+        border-color .18s ease,
+        box-shadow .22s ease;
+      font-size: .9rem;
+      backdrop-filter: blur(2px);
+    }
+
+    .quick-nav a::after {
+      content: "";
+      position: absolute;
+      inset: -40% -70%;
+      background: linear-gradient(
+        115deg,
+        transparent 38%,
+        rgba(255,255,255,.20) 49%,
+        transparent 60%
+      );
+      transform: translateX(-45%) rotate(3deg);
+      transition: transform .55s ease;
+      pointer-events: none;
+    }
+
+    .quick-nav a:hover {
+      transform: translateY(-2px) scale(1.015);
+      background:
+        linear-gradient(110deg,
+          rgba(123,91,169,.48),
+          rgba(49,118,98,.40) 48%,
+          rgba(194,139,74,.40));
+      border-color: rgba(240,207,125,.72);
+      box-shadow:
+        0 0 16px rgba(114,87,168,.16),
+        0 0 24px rgba(62,123,116,.08),
+        inset 0 1px 0 rgba(255,255,255,.16);
+    }
+
+    .quick-nav a:hover::after {
+      transform: translateX(55%) rotate(3deg);
+    }
+
+    .scroll {
+      position: relative;
+      border: 1px solid rgba(105,75,39,.44);
+      border-radius: 20px;
+      padding: clamp(25px, 5vw, 58px);
+      background:
+        radial-gradient(circle at 10% 8%, rgba(114,87,168,.075), transparent 19%),
+        radial-gradient(circle at 92% 90%, rgba(62,123,116,.07), transparent 22%),
+        linear-gradient(rgba(255,255,255,.15), rgba(255,255,255,.025)),
+        repeating-linear-gradient(
+          0deg,
+          rgba(105,75,39,.024) 0,
+          rgba(105,75,39,.024) 1px,
+          transparent 1px,
+          transparent 5px
+        ),
+        linear-gradient(135deg, var(--parchment), #f9efd4 47%, var(--parchment-2));
+      box-shadow:
+        var(--shadow),
+        0 0 0 1px rgba(240,207,125,.06),
+        0 0 80px rgba(114,87,168,.10);
+      overflow: hidden;
+    }
+
+    .scroll::before,
+    .scroll::after {
+      content: "✦";
+      position: absolute;
+      color: rgba(106,76,36,.23);
+      font-size: 58px;
+      line-height: 1;
+    }
+
+    .scroll::before { top: 16px; left: 19px; }
+    .scroll::after  { right: 19px; bottom: 14px; transform: rotate(45deg); }
+
+    .seal {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 7px 11px;
+      border-radius: 8px;
+      border: 1px solid rgba(108,47,53,.24);
+      background:
+        linear-gradient(90deg,
+          rgba(108,47,83,.08),
+          rgba(114,87,168,.08),
+          rgba(47,95,80,.08));
+      color: #5a2f43;
+      box-shadow: inset 0 0 18px rgba(114,87,168,.035);
+      font-size: .88rem;
+      font-weight: 700;
+      margin-bottom: 28px;
+    }
+
+    section {
+      scroll-margin-top: 22px;
+      padding: 8px 0 27px;
+      margin-bottom: 17px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    section:last-of-type {
+      border-bottom: 0;
+      margin-bottom: 0;
+    }
+
+    h2 {
+      position: relative;
+      margin: 0 0 14px;
+      color: #332516;
+      font-size: clamp(1.35rem, 3vw, 1.8rem);
+      line-height: 1.24;
+    }
+
+    h2::after {
+      content: "";
+      display: block;
+      width: 82px;
+      height: 2px;
+      margin-top: 8px;
+      border-radius: 999px;
+      background: linear-gradient(
+        90deg,
+        rgba(114,87,168,.68),
+        rgba(62,123,116,.62),
+        rgba(215,168,76,.72)
+      );
+      box-shadow: 0 0 9px rgba(114,87,168,.12);
+    }
+
+    h2::before {
+      content: "✧";
+      color: #7a5e9f;
+      text-shadow: 0 0 10px rgba(114,87,168,.22);
+      margin-right: 9px;
+      font-size: .85em;
+    }
+
+    h3 {
+      margin: 18px 0 7px;
+      color: #4b3721;
+      font-size: 1.05rem;
+    }
+
+    p { margin: 0 0 12px; }
+
+    ul {
+      margin: 8px 0 14px;
+      padding-left: 24px;
+    }
+
+    li { margin: 6px 0; }
+
+    a {
+      color: #6b3d1f;
+      text-underline-offset: 3px;
+    }
+
+    .callout {
+      margin: 16px 0;
+      padding: 16px 17px;
+      border: 1px solid rgba(40,72,60,.24);
+      border-left: 4px solid var(--forest);
+      border-radius: 11px;
+      background:
+        linear-gradient(100deg,
+          rgba(40,72,60,.075),
+          rgba(114,87,168,.045),
+          rgba(200,157,69,.055));
+    }
+
+    .subscription-card {
+      margin: 16px 0;
+      padding: 18px;
+      border-radius: 14px;
+      border: 1px solid rgba(106,76,36,.22);
+      background: rgba(255,255,255,.25);
+      box-shadow: inset 0 1px rgba(255,255,255,.4);
+    }
+
+    .subscription-card strong {
+      color: #50351c;
+    }
+
+    .small {
+      color: var(--ink-soft);
+      font-size: .94rem;
+    }
+
+    .footer {
+      text-align: center;
+      color: rgba(246,236,210,.68);
+      margin-top: 28px;
+      font-size: .88rem;
+      text-shadow: 0 0 12px rgba(114,87,168,.10);
+    }
+
+    .footer a { color: var(--gold-soft); }
+
+    .top-link {
+      display: inline-block;
+      margin-top: 7px;
+      text-decoration: none;
+    }
+
+    .placeholder {
+      background: rgba(151,84,48,.10);
+      border-bottom: 1px dashed rgba(108,47,53,.62);
+      padding: 0 3px;
+      font-weight: 700;
+      color: #6a2d33;
+    }
+
+    @media (max-width: 620px) {
+      .shell { padding-top: 34px; }
+      .scroll { border-radius: 15px; }
+      .quick-nav { margin-bottom: 23px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation: none !important;
+        scroll-behavior: auto !important;
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body id="top">
+  <div class="stars" aria-hidden="true"></div>
+
+  <main class="shell">
+    <header class="hero">
+      <div class="crest-wrap" aria-hidden="true">
+        <span class="sparkle s1">✦</span>
+        <span class="sparkle s2">✧</span>
+        <span class="sparkle s3">✦</span>
+        <span class="sparkle s4">✧</span>
+        <span class="sparkle s5">✦</span>
+        <span class="sparkle s6">✧</span>
+        <div class="crest">🔐</div>
+      </div>
+      <div class="eyebrow">The BookMe Codex</div>
+      <h1>Privacy Policy</h1>
+      <p class="subtitle">
+        A clear account of how BookMe handles your information — designed to protect
+        the stories, ideas, and creative work entrusted to the app.
+      </p>
+      <div aria-hidden="true" style="
+        margin:18px auto 0;
+        color:#d9c7ff;
+        letter-spacing:.34em;
+        font-size:.92rem;
+        text-shadow:0 0 18px rgba(169,137,216,.45);
+      ">✦ ✧ ☾ ✧ ✦</div>
+    </header>
+
+    <nav class="quick-nav" aria-label="Privacy navigation">
+      <a href="#collect">What We Collect</a>
+      <a href="#use">How We Use It</a>
+      <a href="#ai">AI Features</a>
+      <a href="#sharing">Sharing</a>
+      <a href="#retention">Retention</a>
+      <a href="#rights">Your Rights</a>
+      <a href="#children">Children</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <article class="scroll">
+      <div class="seal">✦ Effective September 10, 2026</div>
+
+      <section id="overview">
+        <h2>1. Privacy at a Glance</h2>
+        <p>
+          This Privacy Policy explains how <strong>BookMe: Guided Book Writer</strong>
+          (“BookMe,” “we,” “us,” or “our”) collects, uses, stores, shares, and protects
+          information when you use the BookMe application and related services.
+        </p>
+        <p>
+          BookMe is a guided writing application that may include account features,
+          manuscript and note storage, profile and community features, image uploads,
+          AI-assisted writing tools, subscriptions, and related app functionality.
+        </p>
+        <div class="callout">
+          <strong>Short version:</strong> we use information to operate BookMe,
+          save and sync your work, provide the features you request, maintain account
+          security, process subscription access, support community features, and improve
+          reliability. We do not sell your personal information.
+        </div>
+      </section>
+
+      <section id="collect">
+        <h2>2. Information We Collect</h2>
+
+        <h3>Account and Contact Information</h3>
+        <p>
+          When you create or use an account, we may collect information such as your
+          <strong>email address, display name, profile information, and internal user identifier</strong>.
+        </p>
+
+        <h3>Your Writing and Other User Content</h3>
+        <p>
+          We may collect and store content you intentionally create, upload, or submit,
+          including manuscripts, chapters, notes, outlines, prompts, titles, book details,
+          profile text, comments or reactions, and other written material.
+        </p>
+
+        <h3>Photos and Images</h3>
+        <p>
+          If you choose to upload images, BookMe may collect profile pictures, book-cover
+          images, manuscript images, or other images you submit through the app.
+        </p>
+
+        <h3>Subscription and Purchase Information</h3>
+        <p>
+          If you purchase a subscription through the Apple App Store, Apple processes the
+          payment. BookMe may receive information needed to determine your subscription
+          status, product entitlement, renewal state, or purchase validation. We do
+          <strong>not</strong> receive your full credit-card or bank-account details from Apple.
+        </p>
+
+        <h3>Usage and Diagnostic Information</h3>
+        <p>
+          BookMe may collect limited technical information needed to operate and improve
+          the service, such as app interactions, device or app identifiers, crash reports,
+          diagnostic information, performance information, and error logs, if those
+          services are enabled in the version of BookMe you use.
+        </p>
+
+        <h3>Information You Choose to Make Public</h3>
+        <p>
+          If you use community or sharing features, information you intentionally publish
+          may be visible to other BookMe users. This may include a display name, profile
+          image, book information, writing excerpts, reactions, progress information, or
+          other content you choose to share.
+        </p>
+      </section>
+
+      <section id="use">
+        <h2>3. How We Use Information</h2>
+        <p>We may use collected information to:</p>
+        <ul>
+          <li>create, authenticate, and maintain your account;</li>
+          <li>save, sync, organize, display, and export your writing and other content;</li>
+          <li>provide writing, planning, editing, community, and personalization features;</li>
+          <li>provide and verify subscription or premium-feature access;</li>
+          <li>process requests you make through AI-assisted writing tools;</li>
+          <li>moderate uploaded content and help protect users from abuse or prohibited material;</li>
+          <li>provide customer support and respond to questions;</li>
+          <li>detect fraud, abuse, security incidents, and technical problems;</li>
+          <li>maintain, troubleshoot, and improve BookMe; and</li>
+          <li>comply with applicable legal obligations.</li>
+        </ul>
+      </section>
+
+      <section id="ai">
+        <h2>4. AI-Assisted Writing Features</h2>
+        <p>
+          BookMe may offer optional AI-assisted features such as brainstorming,
+          rewriting, polishing, expanding, shortening, summarizing, grammar assistance,
+          contextual suggestions, or other writing help.
+        </p>
+        <p>
+          When you intentionally use an AI feature, the text, prompt, selected passage,
+          contextual writing, or other information necessary to respond to your request
+          may be sent to an AI service provider for processing.
+        </p>
+        <p>
+          We use AI-related information only as reasonably necessary to provide the
+          feature you requested, maintain safety and reliability, and operate the service,
+          subject to the practices of the applicable service provider.
+        </p>
+        <div class="callout">
+          BookMe does not require you to use AI tools in order to write. Avoid submitting
+          information to AI features that you do not want processed as part of an AI request.
+        </div>
+      </section>
+
+      <section id="sharing">
+        <h2>5. When Information May Be Shared</h2>
+        <p>
+          We do not sell your personal information. We may share information only in
+          circumstances such as the following:
+        </p>
+
+        <h3>Service Providers</h3>
+        <p>
+          We may use trusted providers for services such as cloud hosting and databases,
+          authentication, file storage, subscription management, AI processing, email
+          delivery, analytics, crash reporting, security, or other infrastructure needed
+          to operate BookMe. They may process information on our behalf to provide those services.
+        </p>
+
+        <h3>Community Features</h3>
+        <p>
+          Content you intentionally publish through community features may be shared with
+          and visible to other users according to the settings and features you choose.
+          Drafts and private writing are not made public merely because they are stored in BookMe.
+        </p>
+
+        <h3>Legal and Safety Reasons</h3>
+        <p>
+          We may disclose information when reasonably necessary to comply with law,
+          respond to valid legal process, enforce our Terms, investigate fraud or abuse,
+          protect the security of BookMe, or protect the rights and safety of users or others.
+        </p>
+
+        <h3>Business Changes</h3>
+        <p>
+          If BookMe is involved in a merger, acquisition, financing, reorganization,
+          bankruptcy, or sale of assets, information may be transferred as part of that
+          transaction, subject to applicable law.
+        </p>
+      </section>
+
+      <section id="tracking">
+        <h2>6. Advertising and Tracking</h2>
+        <p>
+          BookMe is not designed around third-party behavioral advertising. We do not
+          sell your personal information for advertising purposes.
+        </p>
+        <p>
+          If BookMe later introduces advertising, cross-app tracking, or materially
+          different data practices, this Privacy Policy and applicable App Store privacy
+          disclosures will be updated before those practices are used where required.
+        </p>
+      </section>
+
+      <section id="moderation">
+        <h2>7. Community Safety and Moderation</h2>
+        <p>
+          BookMe may process user-generated content and related account information to
+          operate reporting, blocking, moderation, abuse prevention, image moderation,
+          and other community-safety functions.
+        </p>
+        <p>
+          Content reported by users or detected by safety systems may be reviewed and,
+          when appropriate, restricted or removed in accordance with our Terms of Service.
+        </p>
+      </section>
+
+      <section id="retention">
+        <h2>8. Data Retention</h2>
+        <p>
+          We retain information for as long as reasonably necessary to provide BookMe,
+          maintain your account, fulfill the purposes described in this Policy, comply
+          with legal obligations, resolve disputes, enforce agreements, and maintain
+          security and fraud-prevention records.
+        </p>
+        <p>
+          Retention periods may differ depending on the type of information. Some backup,
+          transaction, security, or legal records may remain for a limited period after
+          account or content deletion where permitted or required by law.
+        </p>
+      </section>
+
+      <section id="security">
+        <h2>9. Security</h2>
+        <p>
+          We use reasonable administrative, technical, and organizational safeguards
+          intended to protect information against unauthorized access, loss, misuse,
+          alteration, or disclosure. No internet-connected service can guarantee absolute
+          security, so users should also protect their login credentials and devices.
+        </p>
+      </section>
+
+      <section id="rights">
+        <h2>10. Your Choices and Privacy Rights</h2>
+        <p>
+          Depending on where you live, you may have rights to request access to,
+          correction of, deletion of, or a copy of certain personal information, or to
+          object to or restrict certain processing.
+        </p>
+        <p>
+          You can also remove or edit certain information directly through BookMe where
+          those controls are provided. For privacy or deletion requests, contact us at
+          <a href="mailto:lecoffeeconfit@gmail.com">lecoffeeconfit@gmail.com</a>.
+        </p>
+        <p>
+          We may need to verify your identity before fulfilling certain requests.
+          We will respond in accordance with applicable law.
+        </p>
+      </section>
+
+      <section id="california">
+        <h2>11. California Privacy Notice</h2>
+        <p>
+          California residents may have additional privacy rights under applicable
+          California law. Depending on whether a particular law applies to BookMe,
+          those rights may include requesting information about categories of personal
+          information collected, requesting deletion or correction, and exercising
+          other applicable privacy choices.
+        </p>
+        <p>
+          BookMe does not sell personal information. To make a California privacy
+          request, email
+          <a href="mailto:lecoffeeconfit@gmail.com">lecoffeeconfit@gmail.com</a>.
+        </p>
+      </section>
+
+      <section id="children">
+        <h2>12. Children's Privacy</h2>
+        <p>
+          BookMe is not directed to children under 13, and we do not knowingly collect
+          personal information from children under 13 in violation of applicable law.
+          If you believe a child has provided personal information improperly, contact
+          us so we can investigate and take appropriate action.
+        </p>
+      </section>
+
+      <section id="international">
+        <h2>13. Data Processing Locations</h2>
+        <p>
+          BookMe and its service providers may process information in the United States
+          and other locations where they operate. Privacy protections and laws may differ
+          between jurisdictions. Where required, we use appropriate measures for
+          international data transfers.
+        </p>
+      </section>
+
+      <section id="third-party">
+        <h2>14. Third-Party Services and Links</h2>
+        <p>
+          BookMe may rely on third-party platforms or services to provide infrastructure,
+          subscriptions, authentication, AI processing, or other functionality. Their
+          handling of information may also be governed by their own privacy policies.
+        </p>
+        <p>
+          BookMe may also contain links to third-party sites. We are not responsible for
+          the privacy practices of websites or services that we do not control.
+        </p>
+      </section>
+
+      <section id="changes">
+        <h2>15. Changes to This Privacy Policy</h2>
+        <p>
+          We may update this Privacy Policy from time to time to reflect changes to
+          BookMe, our data practices, legal requirements, or service providers. When
+          appropriate, we may provide notice through the app, our website, email, or
+          another reasonable method.
+        </p>
+        <p>
+          The “Effective” date at the top of this page identifies the current version.
+        </p>
+      </section>
+
+      <section id="terms">
+        <h2>16. Terms of Service</h2>
+        <p>
+          Use of BookMe is also governed by our Terms of Service:
+          <a href="terms.html">BookMe Terms of Service</a>.
+        </p>
+        <p class="small">
+          If you use a different GitHub Pages filename or URL for the Terms page,
+          update this link before publishing.
+        </p>
+      </section>
+
+      <section id="contact">
+        <h2>17. Contact Us</h2>
+        <p>
+          For privacy questions, requests, or concerns:
+        </p>
+        <p>
+          <strong>BookMe Privacy</strong><br />
+          Email:
+          <a href="mailto:lecoffeeconfit@gmail.com">lecoffeeconfit@gmail.com</a>
+        </p>
+
+        <a class="top-link" href="#top">↑ Return to the top of the scroll</a>
+      </section>
+    </article>
+
+    <footer class="footer">
+      © 2026 BookMe. All rights reserved. ·
+      <a href="terms.html">Terms of Service</a>
+    </footer>
+  </main>
+</body>
+</html>
