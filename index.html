@@ -1,1 +1,920 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Support for BookMe: Guided Book Writer — help with accounts, subscriptions, writing, AI tools, community features, privacy, and troubleshooting." />
+  <meta name="theme-color" content="#17120d" />
+  <title>BookMe — Support</title>
 
+  <style>
+    :root {
+      --ink: #2a2118;
+      --ink-soft: #5e4b36;
+      --parchment: #f3e4be;
+      --parchment-2: #e7cf98;
+      --gold: #d7a84c;
+      --gold-soft: #f0cf7d;
+      --moon: #d9c7ff;
+      --amethyst: #7257a8;
+      --amethyst-soft: #a989d8;
+      --emerald: #2f5f50;
+      --teal-magic: #3e7b74;
+      --night: #0d0b12;
+      --night-2: #17111f;
+      --wine: #6e304d;
+      --forest: #2d5647;
+      --line: rgba(74, 52, 28, 0.22);
+      --shadow: 0 24px 65px rgba(0, 0, 0, 0.42);
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      background: var(--night);
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.72;
+      background:
+        radial-gradient(circle at 18% 10%, rgba(215,168,76,.18), transparent 28%),
+        radial-gradient(circle at 82% 18%, rgba(114,87,168,.22), transparent 30%),
+        radial-gradient(circle at 50% 72%, rgba(62,123,116,.13), transparent 34%),
+        linear-gradient(160deg, var(--night), var(--night-2) 52%, #09080d);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .stars,
+    .stars::before,
+    .stars::after {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      content: "";
+      z-index: 0;
+      background-image:
+        radial-gradient(circle, rgba(240,207,125,.85) 0 1px, transparent 1.6px),
+        radial-gradient(circle, rgba(217,199,255,.62) 0 1px, transparent 1.5px),
+        radial-gradient(circle, rgba(169,137,216,.45) 0 1px, transparent 1.4px);
+      background-size: 92px 92px, 143px 143px, 211px 211px;
+      background-position: 0 0, 37px 71px, 83px 24px;
+      opacity: .24;
+      animation: drift 24s linear infinite;
+    }
+
+    .stars::before {
+      transform: scale(1.2);
+      opacity: .12;
+      animation-duration: 34s;
+    }
+
+    .stars::after {
+      transform: scale(.8);
+      opacity: .1;
+      animation-duration: 42s;
+    }
+
+    @keyframes drift {
+      from { transform: translateY(0); }
+      to   { transform: translateY(-92px); }
+    }
+
+    .shell {
+      position: relative;
+      z-index: 1;
+      width: min(100% - 28px, 980px);
+      margin: 0 auto;
+      padding: 54px 0 70px;
+    }
+
+    .crest-wrap {
+      position: relative;
+      width: 132px;
+      height: 116px;
+      margin: 0 auto 6px;
+      display: grid;
+      place-items: center;
+    }
+
+    .crest {
+      width: 74px;
+      height: 74px;
+      margin: 0;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(229,199,125,.55);
+      border-radius: 50%;
+      color: var(--gold-soft);
+      font-size: 36px;
+      background:
+        radial-gradient(circle at 35% 30%, rgba(114,87,168,.34), transparent 42%),
+        rgba(13,11,18,.78);
+      box-shadow:
+        0 0 0 8px rgba(215,168,76,.05),
+        0 0 34px rgba(215,168,76,.20),
+        0 0 62px rgba(114,87,168,.18);
+      animation: glow 4s ease-in-out infinite;
+      position: relative;
+      z-index: 2;
+    }
+
+    .sparkle {
+      position: absolute;
+      z-index: 1;
+      font-size: 14px;
+      line-height: 1;
+      opacity: .82;
+      filter: drop-shadow(0 0 7px currentColor);
+      animation: twinkle 2.6s ease-in-out infinite;
+      user-select: none;
+      pointer-events: none;
+    }
+
+    .sparkle.s1 { left: 10px; top: 25px; color: #d9c7ff; animation-delay: .1s; }
+    .sparkle.s2 { right: 9px; top: 18px; color: #f0cf7d; animation-delay: .7s; }
+    .sparkle.s3 { left: 24px; bottom: 16px; color: #67b6a3; animation-delay: 1.15s; }
+    .sparkle.s4 { right: 24px; bottom: 11px; color: #b690e8; animation-delay: 1.65s; }
+    .sparkle.s5 { left: 3px; top: 57px; color: #e9a0c3; animation-delay: 2s; font-size: 10px; }
+    .sparkle.s6 { right: 3px; top: 55px; color: #8fd4c4; animation-delay: 2.3s; font-size: 10px; }
+
+    @keyframes twinkle {
+      0%, 100% {
+        transform: scale(.75) rotate(0deg);
+        opacity: .35;
+      }
+      50% {
+        transform: scale(1.18) rotate(18deg);
+        opacity: 1;
+      }
+    }
+
+    @keyframes glow {
+      0%, 100% {
+        box-shadow: 0 0 0 8px rgba(215,168,76,.05), 0 0 30px rgba(215,168,76,.15), 0 0 50px rgba(114,87,168,.10);
+      }
+      50% {
+        box-shadow: 0 0 0 11px rgba(215,168,76,.07), 0 0 48px rgba(215,168,76,.26), 0 0 72px rgba(114,87,168,.22);
+      }
+    }
+
+    .hero {
+      text-align: center;
+      color: #f8efd8;
+      margin-bottom: 28px;
+    }
+
+    .eyebrow {
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--gold-soft);
+      font-size: .78rem;
+      margin-bottom: 7px;
+    }
+
+    h1 {
+      font-size: clamp(2.35rem, 6vw, 4.6rem);
+      line-height: 1;
+      margin: 0;
+      font-weight: 700;
+      letter-spacing: -.035em;
+      text-shadow:
+        0 2px 18px rgba(0,0,0,.45),
+        0 0 28px rgba(114,87,168,.18);
+    }
+
+    .subtitle {
+      max-width: 690px;
+      margin: 16px auto 0;
+      color: rgba(246,236,210,.74);
+      font-size: 1.03rem;
+    }
+
+    .quick-nav {
+      display: flex;
+      gap: 9px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 23px auto 32px;
+    }
+
+    .quick-nav a {
+      position: relative;
+      overflow: hidden;
+      color: #fff3cf;
+      text-decoration: none;
+      padding: 9px 14px;
+      border: 1px solid rgba(236,207,139,.42);
+      border-radius: 999px;
+      background:
+        linear-gradient(110deg,
+          rgba(103,74,142,.34),
+          rgba(44,98,83,.28) 48%,
+          rgba(167,112,61,.28));
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.12),
+        inset 0 0 18px rgba(114,87,168,.06),
+        0 0 12px rgba(114,87,168,.07);
+      transition:
+        transform .18s ease,
+        background .22s ease,
+        border-color .18s ease,
+        box-shadow .22s ease;
+      font-size: .9rem;
+      backdrop-filter: blur(2px);
+    }
+
+    .quick-nav a::after {
+      content: "";
+      position: absolute;
+      inset: -40% -70%;
+      background: linear-gradient(
+        115deg,
+        transparent 38%,
+        rgba(255,255,255,.20) 49%,
+        transparent 60%
+      );
+      transform: translateX(-45%) rotate(3deg);
+      transition: transform .55s ease;
+      pointer-events: none;
+    }
+
+    .quick-nav a:hover {
+      transform: translateY(-2px) scale(1.015);
+      background:
+        linear-gradient(110deg,
+          rgba(123,91,169,.48),
+          rgba(49,118,98,.40) 48%,
+          rgba(194,139,74,.40));
+      border-color: rgba(240,207,125,.72);
+      box-shadow:
+        0 0 16px rgba(114,87,168,.16),
+        0 0 24px rgba(62,123,116,.08),
+        inset 0 1px 0 rgba(255,255,255,.16);
+    }
+
+    .quick-nav a:hover::after {
+      transform: translateX(55%) rotate(3deg);
+    }
+
+    .scroll {
+      position: relative;
+      border: 1px solid rgba(105,75,39,.44);
+      border-radius: 20px;
+      padding: clamp(25px, 5vw, 58px);
+      background:
+        radial-gradient(circle at 10% 8%, rgba(114,87,168,.075), transparent 19%),
+        radial-gradient(circle at 92% 90%, rgba(62,123,116,.07), transparent 22%),
+        linear-gradient(rgba(255,255,255,.15), rgba(255,255,255,.025)),
+        repeating-linear-gradient(
+          0deg,
+          rgba(105,75,39,.024) 0,
+          rgba(105,75,39,.024) 1px,
+          transparent 1px,
+          transparent 5px
+        ),
+        linear-gradient(135deg, var(--parchment), #f9efd4 47%, var(--parchment-2));
+      box-shadow:
+        var(--shadow),
+        0 0 0 1px rgba(240,207,125,.06),
+        0 0 80px rgba(114,87,168,.10);
+      overflow: hidden;
+    }
+
+    .scroll::before,
+    .scroll::after {
+      content: "✦";
+      position: absolute;
+      color: rgba(106,76,36,.23);
+      font-size: 58px;
+      line-height: 1;
+    }
+
+    .scroll::before { top: 16px; left: 19px; }
+    .scroll::after  { right: 19px; bottom: 14px; transform: rotate(45deg); }
+
+    .seal {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 7px 11px;
+      border-radius: 8px;
+      border: 1px solid rgba(108,47,53,.24);
+      background:
+        linear-gradient(90deg,
+          rgba(108,47,83,.08),
+          rgba(114,87,168,.08),
+          rgba(47,95,80,.08));
+      color: #5a2f43;
+      box-shadow: inset 0 0 18px rgba(114,87,168,.035);
+      font-size: .88rem;
+      font-weight: 700;
+      margin-bottom: 28px;
+    }
+
+    section {
+      scroll-margin-top: 22px;
+      padding: 8px 0 27px;
+      margin-bottom: 17px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    section:last-of-type {
+      border-bottom: 0;
+      margin-bottom: 0;
+    }
+
+    h2 {
+      position: relative;
+      margin: 0 0 14px;
+      color: #332516;
+      font-size: clamp(1.35rem, 3vw, 1.8rem);
+      line-height: 1.24;
+    }
+
+    h2::after {
+      content: "";
+      display: block;
+      width: 82px;
+      height: 2px;
+      margin-top: 8px;
+      border-radius: 999px;
+      background: linear-gradient(
+        90deg,
+        rgba(114,87,168,.68),
+        rgba(62,123,116,.62),
+        rgba(215,168,76,.72)
+      );
+      box-shadow: 0 0 9px rgba(114,87,168,.12);
+    }
+
+    h2::before {
+      content: "✧";
+      color: #7a5e9f;
+      text-shadow: 0 0 10px rgba(114,87,168,.22);
+      margin-right: 9px;
+      font-size: .85em;
+    }
+
+    h3 {
+      margin: 18px 0 7px;
+      color: #4b3721;
+      font-size: 1.05rem;
+    }
+
+    p { margin: 0 0 12px; }
+
+    ul {
+      margin: 8px 0 14px;
+      padding-left: 24px;
+    }
+
+    li { margin: 6px 0; }
+
+    a {
+      color: #6b3d1f;
+      text-underline-offset: 3px;
+    }
+
+    .callout {
+      margin: 16px 0;
+      padding: 16px 17px;
+      border: 1px solid rgba(40,72,60,.24);
+      border-left: 4px solid var(--forest);
+      border-radius: 11px;
+      background:
+        linear-gradient(100deg,
+          rgba(40,72,60,.075),
+          rgba(114,87,168,.045),
+          rgba(200,157,69,.055));
+    }
+
+    .subscription-card {
+      margin: 16px 0;
+      padding: 18px;
+      border-radius: 14px;
+      border: 1px solid rgba(106,76,36,.22);
+      background: rgba(255,255,255,.25);
+      box-shadow: inset 0 1px rgba(255,255,255,.4);
+    }
+
+    .subscription-card strong {
+      color: #50351c;
+    }
+
+    .small {
+      color: var(--ink-soft);
+      font-size: .94rem;
+    }
+
+    .footer {
+      text-align: center;
+      color: rgba(246,236,210,.68);
+      margin-top: 28px;
+      font-size: .88rem;
+      text-shadow: 0 0 12px rgba(114,87,168,.10);
+    }
+
+    .footer a { color: var(--gold-soft); }
+
+    .top-link {
+      display: inline-block;
+      margin-top: 7px;
+      text-decoration: none;
+    }
+
+    .placeholder {
+      background: rgba(151,84,48,.10);
+      border-bottom: 1px dashed rgba(108,47,53,.62);
+      padding: 0 3px;
+      font-weight: 700;
+      color: #6a2d33;
+    }
+
+    @media (max-width: 620px) {
+      .shell { padding-top: 34px; }
+      .scroll { border-radius: 15px; }
+      .quick-nav { margin-bottom: 23px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation: none !important;
+        scroll-behavior: auto !important;
+        transition: none !important;
+      }
+    }
+  
+    .support-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin: 18px 0 8px;
+    }
+
+    .support-card {
+      border: 1px solid rgba(106,76,36,.22);
+      border-radius: 14px;
+      padding: 18px;
+      background:
+        linear-gradient(125deg,
+          rgba(114,87,168,.065),
+          rgba(255,255,255,.21) 48%,
+          rgba(62,123,116,.055));
+      box-shadow:
+        inset 0 1px rgba(255,255,255,.38),
+        0 8px 24px rgba(71,48,25,.055);
+    }
+
+    .support-card h3 {
+      margin-top: 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .support-card p:last-child { margin-bottom: 0; }
+
+    .magic-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin: 7px 7px 7px 0;
+      padding: 10px 15px;
+      border-radius: 999px;
+      border: 1px solid rgba(112,80,41,.34);
+      color: #fff4d6;
+      text-decoration: none;
+      font-weight: 700;
+      background:
+        linear-gradient(110deg,
+          rgba(103,74,142,.92),
+          rgba(44,98,83,.90) 52%,
+          rgba(176,119,57,.90));
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.18),
+        0 8px 22px rgba(75,54,105,.15),
+        0 0 18px rgba(114,87,168,.12);
+      transition: transform .18s ease, box-shadow .22s ease, filter .22s ease;
+    }
+
+    .magic-button:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.08);
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.22),
+        0 11px 27px rgba(75,54,105,.20),
+        0 0 25px rgba(114,87,168,.18);
+    }
+
+    .contact-panel {
+      padding: 22px;
+      margin: 16px 0;
+      border: 1px solid rgba(215,168,76,.30);
+      border-radius: 15px;
+      background:
+        radial-gradient(circle at 10% 20%, rgba(114,87,168,.08), transparent 28%),
+        radial-gradient(circle at 92% 80%, rgba(62,123,116,.075), transparent 29%),
+        rgba(255,255,255,.20);
+      text-align: center;
+    }
+
+    .contact-email {
+      display: inline-block;
+      margin: 4px 0 10px;
+      font-size: clamp(1.05rem, 3vw, 1.25rem);
+      font-weight: 700;
+      word-break: break-word;
+    }
+
+    details {
+      border: 1px solid rgba(106,76,36,.18);
+      border-radius: 11px;
+      padding: 12px 14px;
+      margin: 10px 0;
+      background: rgba(255,255,255,.18);
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 700;
+      color: #49351f;
+    }
+
+    details p, details ul {
+      margin-top: 10px;
+    }
+
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(47,95,80,.10);
+      border: 1px solid rgba(47,95,80,.21);
+      color: #315044;
+      font-size: .88rem;
+      font-weight: 700;
+    }
+
+    @media (max-width: 720px) {
+      .support-grid { grid-template-columns: 1fr; }
+    }
+</style>
+</head>
+
+<body id="top">
+  <div class="stars" aria-hidden="true"></div>
+
+  <main class="shell">
+    <header class="hero">
+      <div class="crest-wrap" aria-hidden="true">
+        <span class="sparkle s1">✦</span>
+        <span class="sparkle s2">✧</span>
+        <span class="sparkle s3">✦</span>
+        <span class="sparkle s4">✧</span>
+        <span class="sparkle s5">✦</span>
+        <span class="sparkle s6">✧</span>
+        <div class="crest">🪶</div>
+      </div>
+
+      <div class="eyebrow">The BookMe Help Codex</div>
+      <h1>Support</h1>
+      <p class="subtitle">
+        Help for writers, storytellers, and world-builders — from account questions
+        to subscriptions, AI tools, community features, and everything in between.
+      </p>
+
+      <div aria-hidden="true" style="
+        margin:18px auto 0;
+        color:#d9c7ff;
+        letter-spacing:.34em;
+        font-size:.92rem;
+        text-shadow:0 0 18px rgba(169,137,216,.45);
+      ">✦ ✧ ☾ ✧ ✦</div>
+    </header>
+
+    <nav class="quick-nav" aria-label="Support navigation">
+      <a href="#contact">Contact</a>
+      <a href="#quick-help">Quick Help</a>
+      <a href="#subscriptions">Subscriptions</a>
+      <a href="#account">Account</a>
+      <a href="#community">Community</a>
+      <a href="#ai">AI Help</a>
+      <a href="#troubleshooting">Troubleshooting</a>
+      <a href="#legal">Privacy & Terms</a>
+    </nav>
+
+    <article class="scroll">
+      <div class="seal">✦ BookMe Support • Updated September 10, 2026</div>
+
+      <section id="welcome">
+        <h2>Welcome to BookMe Support</h2>
+        <p>
+          This page provides support for <strong>BookMe: Guided Book Writer</strong>.
+          BookMe helps users plan, write, revise, organize, and export books, with
+          optional AI-assisted writing and community features.
+        </p>
+
+        <div class="contact-panel">
+          <div class="status-pill">✦ Support available by email</div>
+          <p style="margin:14px 0 2px;">Need help from a person?</p>
+          <a class="contact-email" href="mailto:lecoffeeconfit@gmail.com">lecoffeeconfit@gmail.com</a><br />
+          <a class="magic-button" href="mailto:lecoffeeconfit@gmail.com?subject=BookMe%20Support%20Request">✉ Contact BookMe Support</a>
+        </div>
+
+        <p class="small">
+          When contacting support, please include a short description of the problem,
+          your device model, iOS version, BookMe app version/build if available, and
+          any steps that reproduce the issue. Please do not email passwords or payment-card information.
+        </p>
+      </section>
+
+      <section id="quick-help">
+        <h2>Quick Help</h2>
+
+        <div class="support-grid">
+          <div class="support-card">
+            <h3>📖 Writing & Projects</h3>
+            <p>
+              If a draft, chapter, outline, or writing tool is not behaving as expected,
+              first confirm that you are signed into the correct account and have a stable connection.
+            </p>
+          </div>
+
+          <div class="support-card">
+            <h3>✨ AI Writing Tools</h3>
+            <p>
+              AI features may take a moment to respond and may occasionally produce
+              incomplete or inaccurate output. You remain in control of what you keep,
+              edit, or publish.
+            </p>
+          </div>
+
+          <div class="support-card">
+            <h3>👑 Subscription Access</h3>
+            <p>
+              If premium access does not appear after purchase, reopen BookMe and use
+              <strong>Restore Purchases</strong> where available while signed into the Apple Account
+              used for the original purchase.
+            </p>
+          </div>
+
+          <div class="support-card">
+            <h3>🛡 Community Safety</h3>
+            <p>
+              Use BookMe's in-app report or block tools for objectionable content or abusive users.
+              For additional assistance, email support.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="subscriptions">
+        <h2>Subscriptions, Billing & Purchases</h2>
+        <p>
+          BookMe may offer auto-renewable subscription plans. The exact plan name,
+          duration, price, and any trial or introductory offer are shown inside the app
+          and in Apple's purchase confirmation sheet before you subscribe.
+        </p>
+
+        <details>
+          <summary>How do I cancel my BookMe subscription?</summary>
+          <p>
+            Apple manages subscriptions purchased through the App Store. On iPhone or iPad,
+            open <strong>Settings → your name → Subscriptions → BookMe</strong>, then choose
+            the available cancellation option. Cancel before the next renewal date if you
+            do not want the subscription to renew.
+          </p>
+        </details>
+
+        <details>
+          <summary>How do I restore a purchase?</summary>
+          <p>
+            Open BookMe while signed into the Apple Account that originally purchased the
+            subscription and use <strong>Restore Purchases</strong> on the subscription/paywall
+            screen where available.
+          </p>
+        </details>
+
+        <details>
+          <summary>I paid, but premium features are still locked.</summary>
+          <p>
+            Confirm that you are using the same Apple Account that made the purchase,
+            check that the subscription is active in Apple Subscriptions, reopen BookMe,
+            and try Restore Purchases. If access still does not return, email
+            <a href="mailto:lecoffeeconfit@gmail.com">lecoffeeconfit@gmail.com</a>.
+          </p>
+        </details>
+
+        <details>
+          <summary>How do refunds work?</summary>
+          <p>
+            App Store purchases are billed by Apple. Refund eligibility and refund requests
+            for App Store transactions are handled under Apple's applicable purchase and refund policies.
+          </p>
+        </details>
+
+        <div class="callout">
+          <strong>Important:</strong> deleting the BookMe app or deleting a BookMe account
+          does not automatically cancel an active App Store subscription. Subscription
+          cancellation is managed separately through Apple.
+        </div>
+      </section>
+
+      <section id="account">
+        <h2>Account Help & Account Deletion</h2>
+
+        <details open>
+          <summary>How do I delete my BookMe account?</summary>
+          <p>
+            If you created a BookMe account, use the <strong>Delete Account</strong> option
+            available inside BookMe's account/settings area. Follow the confirmation steps
+            shown in the app to initiate deletion of your account and associated personal
+            data, except information that may need to be retained for legitimate legal,
+            fraud-prevention, security, or transaction-record purposes.
+          </p>
+          <p>
+            If you cannot access your account or the deletion control is not working,
+            contact <a href="mailto:lecoffeeconfit@gmail.com?subject=BookMe%20Account%20Deletion%20Request">lecoffeeconfit@gmail.com</a>
+            and write <strong>BookMe Account Deletion Request</strong> in the subject line.
+          </p>
+        </details>
+
+        <details>
+          <summary>I can't sign in.</summary>
+          <p>
+            Double-check the email/account method you originally used, verify your
+            internet connection, and retry. If the issue continues, email support and
+            describe the sign-in method and any error message you see.
+          </p>
+        </details>
+
+        <details>
+          <summary>Can I delete individual writing without deleting my account?</summary>
+          <p>
+            Where BookMe provides deletion controls for books, chapters, images, or other
+            content, you can use those controls directly. Account deletion is separate and
+            removes the account itself subject to applicable retention requirements.
+          </p>
+        </details>
+      </section>
+
+      <section id="community">
+        <h2>Community, Reports & Blocking</h2>
+        <p>
+          BookMe may allow users to share writing, book information, profile images,
+          reactions, and other user-generated content.
+        </p>
+
+        <details>
+          <summary>How do I report inappropriate content or a user?</summary>
+          <p>
+            Use the available <strong>Report</strong> control associated with the content
+            or user inside BookMe. Reports may be reviewed for violations of BookMe's
+            community rules and Terms of Service.
+          </p>
+        </details>
+
+        <details>
+          <summary>How do I block an abusive user?</summary>
+          <p>
+            Use BookMe's available <strong>Block</strong> control from the relevant user/profile
+            interface. If you cannot access the control or need additional help, contact support.
+          </p>
+        </details>
+
+        <details>
+          <summary>What content is not allowed?</summary>
+          <p>
+            BookMe does not permit unlawful, exploitative, threatening, harassing,
+            fraudulent, malicious, or rights-infringing content, including illegal sexual
+            content involving minors, credible threats, malware, scams, or other content
+            prohibited by the Terms of Service.
+          </p>
+        </details>
+
+        <a class="magic-button" href="mailto:lecoffeeconfit@gmail.com?subject=BookMe%20Safety%20Report">🛡 Email a Safety Concern</a>
+      </section>
+
+      <section id="ai">
+        <h2>AI-Assisted Writing Support</h2>
+        <p>
+          BookMe may offer optional AI-assisted features such as brainstorming, rewriting,
+          polishing, expanding, shortening, grammar assistance, and contextual writing suggestions.
+        </p>
+
+        <details>
+          <summary>Why can AI output be different each time?</summary>
+          <p>
+            AI-generated responses are probabilistic and may vary even when prompts are similar.
+            Review and edit AI output before relying on or publishing it.
+          </p>
+        </details>
+
+        <details>
+          <summary>What information can be processed when I use an AI feature?</summary>
+          <p>
+            When you intentionally activate an AI tool, the prompt, selected writing,
+            and contextual information needed to complete the request may be processed
+            as described in the BookMe Privacy Policy and any applicable in-app notice or consent flow.
+          </p>
+        </details>
+
+        <details>
+          <summary>Is AI required to use BookMe?</summary>
+          <p>
+            No. BookMe's core writing experience can be used independently of optional AI-assisted tools.
+          </p>
+        </details>
+      </section>
+
+      <section id="troubleshooting">
+        <h2>Troubleshooting</h2>
+        <p>If something isn't working correctly, try these steps:</p>
+        <ul>
+          <li>Confirm your device has a stable internet connection.</li>
+          <li>Close and reopen BookMe.</li>
+          <li>Confirm you are signed into the intended BookMe account.</li>
+          <li>Install the latest available version of BookMe from the App Store.</li>
+          <li>Restart your iPhone or iPad if the issue continues.</li>
+          <li>For subscription-access problems, try Restore Purchases.</li>
+          <li>For persistent problems, contact support with the device model, iOS version, app version/build, and a description of what happened.</li>
+        </ul>
+
+        <div class="callout">
+          If BookMe crashes repeatedly or you believe your data is at risk, stop repeating
+          the action that triggers the issue and contact support with as much non-sensitive
+          detail as possible.
+        </div>
+      </section>
+
+      <section id="privacy-help">
+        <h2>Privacy Requests</h2>
+        <p>
+          For questions about personal information, access, correction, deletion, or other
+          privacy choices, review the BookMe Privacy Policy or email
+          <a href="mailto:lecoffeeconfit@gmail.com?subject=BookMe%20Privacy%20Request">lecoffeeconfit@gmail.com</a>.
+        </p>
+        <p>
+          We may need to verify that a request relates to your account before fulfilling
+          certain privacy requests.
+        </p>
+      </section>
+
+      <section id="legal">
+        <h2>Privacy, Terms & Legal Information</h2>
+        <p>
+          These pages explain BookMe's data practices, service rules, subscription terms,
+          user-content rules, AI-related practices, and other important information.
+        </p>
+
+        <a class="magic-button" href="privacy.html">🔐 Privacy Policy</a>
+        <a class="magic-button" href="terms.html">📜 Terms of Service</a>
+
+        <p class="small" style="margin-top:12px;">
+          For the links above to work automatically on GitHub Pages, publish your matching
+          legal pages as <strong>privacy.html</strong> and <strong>terms.html</strong> in the same folder
+          as this support page.
+        </p>
+      </section>
+
+      <section id="contact">
+        <h2>Contact BookMe Support</h2>
+        <p>
+          Questions about app issues, feedback, feature suggestions, account concerns,
+          subscriptions, privacy, or community safety are welcome.
+        </p>
+
+        <div class="contact-panel">
+          <p style="margin:0 0 5px;"><strong>BookMe Support</strong></p>
+          <a class="contact-email" href="mailto:lecoffeeconfit@gmail.com">lecoffeeconfit@gmail.com</a>
+          <p class="small" style="margin:0 0 12px;">
+            Please include “BookMe” in your subject line so your request can be identified quickly.
+          </p>
+          <a class="magic-button" href="mailto:lecoffeeconfit@gmail.com?subject=BookMe%20Support">✉ Send Support Email</a>
+        </div>
+
+        <p class="small">
+          BookMe welcomes bug reports, general feedback, and feature-enhancement requests.
+        </p>
+
+        <a class="top-link" href="#top">↑ Return to the top of the scroll</a>
+      </section>
+    </article>
+
+    <footer class="footer">
+      © 2026 BookMe. All rights reserved. ·
+      <a href="privacy.html">Privacy Policy</a> ·
+      <a href="terms.html">Terms of Service</a> ·
+      <a href="mailto:lecoffeeconfit@gmail.com">Support</a>
+    </footer>
+  </main>
+</body>
+</html>
